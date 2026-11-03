@@ -1,65 +1,71 @@
-👾 MayankNex
+<div align="center">
 
-Cybersecurity Enthusiast | Python Developer | Tech Explorer
+# 👾 MayankNex
 
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=A78BFA&center=true&vCenter=true&width=600&lines=Welcome+to+my+GitHub!;Learning+Cybersecurity;Building+with+Python;Exploring+the+Digital+World" />
-</p>---
-
-🧑‍💻 About Me
-
-Hey! I'm Mayank, a student passionate about technology and cybersecurity.
-
-- 🔐 Interested in Cybersecurity & Ethical Hacking
-- 🐍 Learning Python Programming
-- 🐧 Exploring Linux and Networking
-- 🤖 Interested in AI & Automation
-- 🌱 Always learning and building new things
-- 🎯 My goal is to contribute to a safer digital world.
-
----
-
-⚙️ Tech Stack
+### Student Developer · Cybersecurity Learner · Python & AI Explorer
 
 <p>
-  <img src="https://skillicons.dev/icons?i=python,linux,bash,git,github,vscode,html,css" />
-</p>---
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=21&duration=2800&pause=900&color=A78BFA&center=true&vCenter=true&width=650&lines=Learning+how+systems+work;Building+small%2C+useful+tools;Exploring+Python%2C+Linux+%26+Security;Creating+with+curiosity+%F0%9F%9F%A3" alt="Typing introduction"/>
+</p>
 
-🎯 Currently Learning
+[![GitHub](https://img.shields.io/badge/GitHub-MayankNex-181717?style=for-the-badge&logo=github)](https://github.com/MayankNex)
+[![Profile views](https://komarev.com/ghpvc/?username=MayankNex&style=for-the-badge&color=7C3AED)](https://github.com/MayankNex)
 
-- Python Development
-- Computer Networking
-- Linux Fundamentals
-- Cybersecurity Basics
-- Ethical Hacking in Authorized Labs
+</div>
 
 ---
 
-📊 GitHub Statistics
+## 🧑‍💻 About
 
-<p align="center">
-  <img width="48%" src="https://github-readme-stats.vercel.app/api?username=MayankNex&show_icons=true&theme=tokyonight&hide_border=true" />
-  <img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MayankNex&layout=compact&theme=tokyonight&hide_border=true" />
-</p>---
+Hey! I'm **Mayank**, a student developer interested in understanding technology from the inside out.
 
-🐍 Contribution Graph
+- 🔐 Learning cybersecurity and defensive security fundamentals.
+- 🐍 Building projects with Python.
+- 🐧 Exploring Linux, networking, and command-line tools.
+- 🤖 Curious about AI agents and automation.
+- 🧪 Practising in learning environments and systems where I have permission.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake-dark.svg" />
-</p>---
+**My approach:** learn the fundamentals, build practical projects, test carefully, and document what I learn.
 
-🌐 Connect With Me
+## 🛠️ Technologies I'm exploring
 
-<p align="left">
-  <a href="https://github.com/MayankNex">
-    <img src="https://img.shields.io/badge/GitHub-MayankNex-181717?style=for-the-badge&logo=github" />
-  </a>
-</p>---
-
-💭 My Philosophy
-
-«"Learn quietly. Build consistently. Let your work speak."»
-
-<p align="center">
-  <b>⚡ MAYANKNEX | KEEP EXPLORING. KEEP BUILDING. 💜</b>
+<p>
+  <img src="https://skillicons.dev/icons?i=python,linux,bash,git,github,vscode,html,css,js,go" alt="Technologies"/>
 </p>
+
+## 🚀 Featured projects
+
+| Project | What it is |
+|---|---|
+| [🛡️ SENTINEL-X](https://github.com/MayankNex/SENTINEL-X-v1.0-) | Offline URL heuristic analysis with a Streamlit dashboard and optional AI explanations. |
+| [🌐 NetGuard](https://github.com/MayankNex/NetGuard) | Beginner-friendly Python utility for system details and DNS learning. |
+| [🧠 ARTEX](https://github.com/MayankNex/ARTEX) | An advanced AI security-testing project fork; intended only for authorized labs and scoped assessments. |
+
+## 🎯 Currently learning
+
+- Python programming and software design
+- Computer networks and Linux fundamentals
+- Secure coding and defensive security
+- AI-assisted development and automation
+- Testing, documentation, and Git workflows
+
+## 📊 GitHub activity
+
+<p align="center">
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=MayankNex&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github" alt="GitHub stats"/>
+  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MayankNex&layout=compact&theme=tokyonight&hide_border=true" alt="Top languages"/>
+</p>
+
+## 🤝 Connect
+
+- GitHub: [@MayankNex](https://github.com/MayankNex)
+
+---
+
+<div align="center">
+
+### “Learn quietly. Build consistently. Let your work speak.”
+
+**MAYANKNEX · KEEP EXPLORING. KEEP BUILDING. 💜**
+
+</div>
