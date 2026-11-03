@@ -1,4 +1,4 @@
-👾 MAYANKNEX
+👾 MayankNex
 
 Cybersecurity Enthusiast | Python Developer | Tech Explorer
 
