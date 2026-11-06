@@ -76,10 +76,18 @@ html[data-theme="light"] .hero{background:radial-gradient(ellipse at 78% 20%,rgb
 html[data-theme="light"] .hero .lead,html[data-theme="light"] .note p{color:rgba(255,255,255,.9)}
 @media(max-width:740px){.hero{margin-top:16px;padding:64px 26px 48px;min-height:auto;border-radius:27px}.hero:before{width:260px;height:260px;right:-22%;top:10%}.hero:after{font-size:1rem;letter-spacing:.45rem}}
 
+
+.theme-switch{display:flex;align-items:center;gap:5px;padding:4px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.055);backdrop-filter:blur(16px)}
+.theme-switch button{border:0;border-radius:999px;padding:8px 11px;background:transparent;color:var(--muted);font:600 .76rem 'DM Sans',sans-serif;cursor:pointer;white-space:nowrap}
+.theme-switch button[aria-pressed="true"]{color:#fff;background:linear-gradient(120deg,#713bd0,#a34de0);box-shadow:0 4px 18px rgba(145,75,220,.28)}
+html[data-theme="light"] .theme-switch button[aria-pressed="true"]{color:white}
+html[data-theme="purple"] .theme-switch{background:rgba(31,13,55,.55);border-color:rgba(210,166,255,.35)}
+@media(max-width:740px){.theme-switch{gap:2px;padding:3px}.theme-switch button{font-size:.67rem;padding:7px 8px}.navlinks{gap:8px}}
+
 </style>
 </head>
 <body>
-<header><nav class="wrap"><a class="brand" href="#home">MAYANK<span>✳</span></a><div class="navlinks"><a href="#about">About</a><a href="#skills">Learning</a><a href="#projects">Projects</a><a href="#contact">Contact</a><button class="theme-toggle" id="themeToggle" type="button" aria-label="Change theme" title="Cycle themes"><span id="themeIcon">◈</span><span id="themeLabel">Purple theme</span></button></div></nav></header>
+<header><nav class="wrap"><a class="brand" href="#home">MAYANK<span>✳</span></a><div class="navlinks"><a href="#about">About</a><a href="#skills">Learning</a><a href="#projects">Projects</a><a href="#contact">Contact</a><div class="theme-switch" role="group" aria-label="Choose website theme"><button type="button" data-theme-choice="dark">🌑 Dark</button><button type="button" data-theme-choice="purple">💜 Purple</button><button type="button" data-theme-choice="light">☀️ Light</button></div></div></nav></header>
 <main>
 <div class="wrap hero" id="home">
 <div><div class="eyebrow">A student · a maker · always learning</div><h1>Curious mind.<br><em>Quiet ambition.</em></h1><p class="lead">Hey, I'm Mayank. I like understanding how things work, creating little things that matter, and exploring the space where cybersecurity meets AI.</p><div class="actions"><a class="btn primary" href="#projects">A little of my work ↗</a><a class="btn" href="https://github.com/MayankNex" target="_blank" rel="noreferrer">GitHub ↗</a></div></div>
@@ -106,23 +114,19 @@ html[data-theme="light"] .hero .lead,html[data-theme="light"] .note p{color:rgba
 <script>
 document.getElementById('year').textContent=new Date().getFullYear();
 (() => {
-  const root=document.documentElement, button=document.getElementById('themeToggle');
-  const icon=document.getElementById('themeIcon'), label=document.getElementById('themeLabel');
-  const saved=localStorage.getItem('mayank-theme');
-  const preferred='dark';
+  const root=document.documentElement;
+  const controls=[...document.querySelectorAll('[data-theme-choice]')];
+  const themes=['dark','purple','light'];
   function setTheme(theme){
     root.setAttribute('data-theme',theme);
-    const names={dark:'Dark theme',purple:'Purple theme',light:'Light theme'};
-    const icons={dark:'☾',purple:'◈',light:'☼'};
-    icon.textContent=icons[theme];
-    label.textContent=names[theme];
-    button.setAttribute('aria-label','Current '+names[theme]+'. Tap to change theme');
-    document.querySelector('meta[name="theme-color"]').setAttribute('content',theme==='light'?'#f6f2fc':theme==='purple'?'#160b2b':'#07070b');
+    controls.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.themeChoice===theme)));
+    const colors={dark:'#07070b',purple:'#160b2b',light:'#f6f2fc'};
+    document.querySelector('meta[name="theme-color"]').setAttribute('content',colors[theme]);
     localStorage.setItem('mayank-theme',theme);
   }
-  setTheme(saved==='dark'||saved==='purple'?saved:preferred);
-  const themes=['dark','purple','light'];
-  button.addEventListener('click',()=>{const current=themes.indexOf(root.getAttribute('data-theme'));setTheme(themes[(current+1)%themes.length]);});
+  const saved=localStorage.getItem('mayank-theme');
+  setTheme(themes.includes(saved)?saved:'dark');
+  controls.forEach(button=>button.addEventListener('click',()=>setTheme(button.dataset.themeChoice)));
 })();
 </script>
 </body></html>
