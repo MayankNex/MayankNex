@@ -21,10 +21,30 @@ section{padding:68px 0}.section-head{margin-bottom:27px}.section-head h2{font:60
 .contact{border-radius:25px;padding:38px;background:linear-gradient(120deg,rgba(110,65,170,.23),rgba(255,255,255,.035))}.contact h2{font:600 2.2rem 'Playfair Display',serif;margin:8px 0}.contact p{color:var(--muted);max-width:620px}footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}::selection{background:#8055d9;color:white}
 @media(max-width:740px){.hero{grid-template-columns:1fr;padding:78px 0 70px;gap:35px}.note{max-width:430px}.skills{grid-template-columns:repeat(2,1fr)}.projects{grid-template-columns:1fr}.navlinks{gap:14px}.navlinks a{font-size:.78rem}.navlinks a:nth-child(2){display:none}section{padding:52px 0}}
 @media(max-width:420px){.skills{grid-template-columns:1fr}.wrap{width:min(100% - 32px,1000px)}h1{font-size:3.2rem}.contact{padding:26px}}
+
+/* Theme switcher */
+.theme-toggle{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border:1px solid var(--line);border-radius:999px;background:rgba(181,140,255,.10);color:var(--text);font:500 .78rem 'DM Sans',sans-serif;cursor:pointer;transition:.2s}
+.theme-toggle:hover{border-color:var(--purple);box-shadow:0 0 22px rgba(181,140,255,.16)}
+.theme-toggle span:first-child{font-size:1rem;color:var(--purple)}
+html[data-theme="light"]{--bg:#f6f2fc;--text:#211a30;--muted:#716981;--purple:#7650b5;--line:rgba(102,72,148,.20)}
+html[data-theme="light"] body{background:radial-gradient(ellipse at 12% 8%,rgba(151,111,211,.19),transparent 35%),radial-gradient(ellipse at 88% 45%,rgba(185,157,224,.20),transparent 38%),var(--bg)}
+html[data-theme="light"] body:before{opacity:.10;background-image:radial-gradient(#8d6bb9 .65px,transparent .65px)}
+html[data-theme="light"] header{background:rgba(246,242,252,.76)}
+html[data-theme="light"] .note,html[data-theme="light"] .about,html[data-theme="light"] .skill,html[data-theme="light"] .project,html[data-theme="light"] .contact{background:linear-gradient(135deg,rgba(255,255,255,.88),rgba(255,255,255,.58));box-shadow:inset 0 1px rgba(255,255,255,.9),0 18px 55px rgba(57,38,85,.08)}
+html[data-theme="light"] .note:after{background:#b99ae940}
+html[data-theme="light"] .quote{color:#7650a7}
+html[data-theme="light"] .tag{color:#62418f;background:rgba(145,104,201,.11);border-color:rgba(118,80,181,.18)}
+html[data-theme="light"] .primary{color:#fff;background:linear-gradient(115deg,#7650b5,#56358e);border-color:#7650b5}
+html[data-theme="light"] .btn{background:rgba(255,255,255,.55)}
+html[data-theme="light"] .btn.primary{background:linear-gradient(115deg,#7650b5,#56358e)}
+html[data-theme="light"] .contact{background:linear-gradient(120deg,rgba(151,111,211,.19),rgba(255,255,255,.68))}
+html[data-theme="light"] footer{border-color:var(--line)}
+html[data-theme="light"] ::selection{background:#8d6ac4;color:white}
+@media(max-width:740px){.navlinks{gap:9px}.theme-toggle{padding:7px 10px}.theme-toggle span:last-child{display:none}}
 </style>
 </head>
 <body>
-<header><nav class="wrap"><a class="brand" href="#home">MAYANK<span>✳</span></a><div class="navlinks"><a href="#about">About</a><a href="#skills">Learning</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div></nav></header>
+<header><nav class="wrap"><a class="brand" href="#home">MAYANK<span>✳</span></a><div class="navlinks"><a href="#about">About</a><a href="#skills">Learning</a><a href="#projects">Projects</a><a href="#contact">Contact</a><button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" title="Switch theme"><span id="themeIcon">☼</span><span id="themeLabel">Light</span></button></div></nav></header>
 <main>
 <div class="wrap hero" id="home">
 <div><div class="eyebrow">A student · a maker · always learning</div><h1>Curious mind.<br><em>Quiet ambition.</em></h1><p class="lead">Hey, I'm Mayank. I like understanding how things work, creating little things that matter, and exploring the space where cybersecurity meets AI.</p><div class="actions"><a class="btn primary" href="#projects">A little of my work ↗</a><a class="btn" href="https://github.com/MayankNex" target="_blank" rel="noreferrer">GitHub ↗</a></div></div>
@@ -48,5 +68,24 @@ section{padding:68px 0}.section-head{margin-bottom:27px}.section-head h2{font:60
 <section id="contact"><div class="wrap"><div class="contact"><div class="eyebrow">04 — Say hello</div><h2>Good ideas grow together.</h2><p>Always glad to connect with people who enjoy learning, building, and making technology a little better.</p><a class="btn primary" href="https://github.com/MayankNex" target="_blank" rel="noreferrer">Find me on GitHub ↗</a></div></div></section>
 </main>
 <footer><div class="wrap footer-inner"><span>© <span id="year"></span> Mayank. Made with curiosity.</span><span>Keep growing, quietly ✳</span></div></footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+(() => {
+  const root=document.documentElement, button=document.getElementById('themeToggle');
+  const icon=document.getElementById('themeIcon'), label=document.getElementById('themeLabel');
+  const saved=localStorage.getItem('mayank-theme');
+  const preferred=window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  function setTheme(theme){
+    root.setAttribute('data-theme',theme);
+    const light=theme==='light';
+    icon.textContent=light?'☾':'☼';
+    label.textContent=light?'Dark':'Light';
+    button.setAttribute('aria-label',light?'Switch to dark theme':'Switch to light theme');
+    document.querySelector('meta[name="theme-color"]').setAttribute('content',light?'#f6f2fc':'#08070f');
+    localStorage.setItem('mayank-theme',theme);
+  }
+  setTheme(saved==='light'||saved==='dark'?saved:preferred);
+  button.addEventListener('click',()=>setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark'));
+})();
+</script>
 </body></html>
