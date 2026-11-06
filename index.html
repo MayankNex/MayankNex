@@ -125,7 +125,7 @@ document.getElementById('year').textContent=new Date().getFullYear();
     localStorage.setItem('mayank-theme',theme);
   }
   const saved=localStorage.getItem('mayank-theme');
-  setTheme(themes.includes(saved)?saved:'dark');
+  setTheme(saved==='purple'?'purple':'dark');
   controls.forEach(button=>button.addEventListener('click',()=>setTheme(button.dataset.themeChoice)));
 })();
 </script>
