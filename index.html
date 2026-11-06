@@ -81,7 +81,7 @@ document.getElementById('year').textContent=new Date().getFullYear();
   const root=document.documentElement, button=document.getElementById('themeToggle');
   const icon=document.getElementById('themeIcon'), label=document.getElementById('themeLabel');
   const saved=localStorage.getItem('mayank-theme');
-  const preferred='purple';
+  const preferred='dark';
   function setTheme(theme){
     root.setAttribute('data-theme',theme);
     const names={dark:'Dark theme',purple:'Purple theme',light:'Light theme'};
@@ -92,7 +92,7 @@ document.getElementById('year').textContent=new Date().getFullYear();
     document.querySelector('meta[name="theme-color"]').setAttribute('content',theme==='light'?'#f6f2fc':theme==='purple'?'#160b2b':'#07070b');
     localStorage.setItem('mayank-theme',theme);
   }
-  setTheme(['dark','purple','light'].includes(saved)?saved:preferred);
+  setTheme(saved==='dark'||saved==='purple'?saved:preferred);
   const themes=['dark','purple','light'];
   button.addEventListener('click',()=>{const current=themes.indexOf(root.getAttribute('data-theme'));setTheme(themes[(current+1)%themes.length]);});
 })();
