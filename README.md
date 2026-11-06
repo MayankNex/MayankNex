@@ -15,6 +15,17 @@
 
 ---
 
+## 🌐 Personal Portfolio
+
+A responsive portfolio focused on cybersecurity, AI, cloud learning, and selected projects.
+
+- **Website source:** [index.html](./index.html)
+- **GitHub profile:** [@MayankNex](https://github.com/MayankNex)
+
+> To publish the live website, enable GitHub Pages for this repository: **Settings → Pages → Deploy from a branch → main → /(root) → Save**. Once enabled, the site will be available at `https://mayanknex.github.io/MayankNex/`.
+
+---
+
 ## 🧑‍💻 About
 
 Hey! I'm **Mayank**, a student developer interested in understanding technology from the inside out.
@@ -40,6 +51,7 @@ Hey! I'm **Mayank**, a student developer interested in understanding technology 
 | [🛡️ SENTINEL-X](https://github.com/MayankNex/SENTINEL-X-v1.0-) | Offline URL heuristic analysis with a Streamlit dashboard and optional AI explanations. |
 | [🌐 NetGuard](https://github.com/MayankNex/NetGuard) | Beginner-friendly Python utility for system details and DNS learning. |
 | [🧠 ARTEX](https://github.com/MayankNex/ARTEX) | An advanced AI security-testing project fork; intended only for authorized labs and scoped assessments. |
+| [🧩 Vulnora-AI](https://github.com/MayankNex/Vulnora-AI) | Security-focused AI project exploring vulnerability information and remediation workflows. |
 
 ## 🎯 Currently learning
 
